@@ -12,6 +12,6 @@ Gem::Specification.new do |lib|
     'Dimitri Pekarovsky'
   ]
   lib.email = 'dimitri@pekarovsky.name'
-  lib.metadata = { source_code_uri: 'git@gitlab.sudo.su:amqp-lib/monkey_patches.git' }
+  lib.metadata = { 'source_code_uri' => 'git@gitlab.sudo.su:amqp-lib/monkey_patches.git' }
   lib.licenses    = ['Private']
 end
