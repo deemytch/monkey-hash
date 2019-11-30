@@ -1,6 +1,6 @@
 Gem::Specification.new do |lib|
-  lib.name = 'monkey_patches'
-  lib.version = '1.0.2'
+  lib.name = 'monkey-patches'
+  lib.version = '1.0.4'
   lib.date = '2019-11-31'
   lib.summary = 'Simple additions for standard classes.'
 
@@ -12,7 +12,7 @@ Gem::Specification.new do |lib|
     'Dimitri Pekarovsky'
   ]
   lib.email = 'aspamkiller@yandex.ru'
-  lib.licenses    = ['GPL']
+  lib.licenses    = ['LGPL-3.0-or-later']
 
   lib.add_runtime_dependency 'msgpack'
 end
