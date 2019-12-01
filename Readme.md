@@ -1,4 +1,4 @@
-# Different utils
+# Various utils
 
 Patching standard classes: Hash, Array, String, Nil, Numeric, Object and Thread.
 
