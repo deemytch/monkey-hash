@@ -7,7 +7,7 @@ Patching standard classes: Hash, Array, String, Nil, Numeric, Object and Thread.
     present? == empty?
 
     symbolize_keys
-    # Transform keys recursive String => Symbol
+    # Transform keys *recursive* String => Symbol
 
     deep_merge( Hash )
 
