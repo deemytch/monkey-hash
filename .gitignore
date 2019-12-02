@@ -15,3 +15,4 @@
 /config/*
 !/config/*example
 /*gem
+/.bundle
