@@ -6,6 +6,10 @@ class Array
     list.count == 1 ? super_include?(list.first) : ( self & list ).count == list.count
   end
 
+  def include_one?( *list )
+    (self & list).count > 0
+  end
+
   def symbolize_hashes
     z = []
     self.each do |i|

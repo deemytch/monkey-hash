@@ -56,6 +56,9 @@ Also here's simple id generator based on current time `AMQProto#correlation_id`.
     include?(*list)
     # must include all elements from list
 
+    include_one?( *list )
+    # must include at least one item from list
+
     symbolize_hashes
     # Additional for Hash#symbolize_keys
 
