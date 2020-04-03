@@ -16,3 +16,4 @@
 !/config/*example
 /*gem
 /.bundle
+/tmp
