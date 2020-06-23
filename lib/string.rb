@@ -9,7 +9,7 @@ class String
     !! ( x =~ /^[-+]?(\d+)(\.\d+(e[-+]?\d+)?)?$/ )
   end
   def present?; ! empty?; end
-  
+  def blank?; nil? || empty? end
   def from_json
     t = JSON.parse( self ) rescue {}
     safe_parse_hash( t )
