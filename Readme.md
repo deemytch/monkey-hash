@@ -1,6 +1,7 @@
 # Various utils
 
 Patching standard classes: Hash, Array, String, Nil, Numeric, Object and Thread.
+
 This gem is supported thanks to pro.ruby community ( https://t.me/pro_rb ).
 
 ## Hash
