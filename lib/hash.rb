@@ -7,14 +7,6 @@ class Hash
   end
   def present?; ! self.empty?; end
 
-  alias_method :assign_value, :[]=
-  def []=( k, v )
-    if $debug && ! key?(k)
-      puts "[#{ k }]=#{ v }"
-    end
-    assign_value( k , v )
-  end
-
   def method_missing( m, *args )
     case m[-1]
     when '?'
