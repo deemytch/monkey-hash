@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Hash
 
   def add_keysym_from(h)
@@ -6,15 +7,38 @@ class Hash
   end
   def present?; ! self.empty?; end
 
+  alias_method :assign_value, :[]=
+  def []=( k, v )
+    if $debug && ! key?(k)
+      puts "[#{ k }]=#{ v }"
+    end
+    assign_value( k , v )
+  end
+
+  def method_missing( m, *args )
+    case m[-1]
+    when '?'
+      n = m[0..-2].to_sym
+      self.key?(n) || self.key?(n.to_s)
+    when '='
+      self[ m[0..-2].to_sym ] = args.first
+    else
+      self[m] || self[m.to_s]
+    end
+  end
+
   def symbolize_keys
     z = {}
     self.each do |k,v|
-      z[ k.is_a?(String) ? k.to_sym : k ] = 
-          case v
-          when Hash then v.symbolize_keys
-          when Array then v.symbolize_hashes
+      z[ k.is_a?(String) ? k.to_sym : k ] =
+          if v.class == Hash
+            v.symbolize_keys
+          elsif v.respond_to?(:to_hash)
+            v.to_hash.symbolize_keys
+          elsif v.respond_to?(:collect)
+            v.collect{|i| i.respond_to?(:symbolize_keys) ? i.symbolize_keys : i }
           else
-            Marshal.load(Marshal.dump(v))
+            v.dup
           end
     end
     z

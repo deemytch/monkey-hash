@@ -1,6 +1,7 @@
 # Various utils
 
 Patching standard classes: Hash, Array, String, Nil, Numeric, Object and Thread.
+This gem is supported thanks to pro.ruby community ( https://t.me/pro_rb ).
 
 ## Hash
 
@@ -18,6 +19,8 @@ Patching standard classes: Hash, Array, String, Nil, Numeric, Object and Thread.
     # At least one key from list must be present
 
     filter_keys( *list )
+
+`hash.key.otherkey.more` notation, also `hash.key?` returns true/false, also `hash.key1.key2 = value` works, even if `key2` not exists.
 
 Also here's simple id generator based on current time `AMQProto#correlation_id`.
 
