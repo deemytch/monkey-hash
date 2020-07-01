@@ -15,7 +15,7 @@ class Array
     self.each do |i|
       z << case i
         when Array then i.symbolize_hashes
-        when Hash then i.symbolize_keys
+        when Hash then i.keys_to_symbols
         else
           Marshal.load(Marshal.dump(i))
         end

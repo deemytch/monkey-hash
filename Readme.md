@@ -8,7 +8,7 @@ This gem is supported thanks to pro.ruby community ( https://t.me/pro_rb ).
 
     present? == empty?
 
-    symbolize_keys
+    keys_to_symbols
     # Transform keys *recursive* String => Symbol
 
     deep_merge( Hash )
@@ -64,7 +64,7 @@ Also here's simple id generator based on current time `AMQProto#correlation_id`.
     # must include at least one item from list
 
     symbolize_hashes
-    # Additional for Hash#symbolize_keys
+    # Additional for Hash#keys_to_symbols
 
 ## AMQProto
 

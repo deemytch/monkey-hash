@@ -2,6 +2,7 @@ require 'yaml'
 require 'json'
 require 'msgpack'
 require 'zlib'
+require_relative 'hash'
 
 class String
   def like_number?
@@ -41,9 +42,9 @@ class String
   def safe_parse_hash( t )
     case t
     when Array
-      t.collect{|item| item.is_a?( Hash ) ? item.symbolize_keys : item }
+      t.collect{|item| item.is_a?( Hash ) ? item.keys_to_symbols : item }
     when Hash
-      t.symbolize_keys
+      t.keys_to_symbols
     else
       t
     end

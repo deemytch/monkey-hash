@@ -14,7 +14,7 @@ RSpec.describe Hash do
       "a" => 1,
       "b" => '2',
       "c" => { "host" => "localhost", "port" => 8080, "threads" => 4 }
-    }.symbolize_keys ).to eq({
+    }.keys_to_symbols ).to eq({
       :a => 1,
       :b => '2',
       :c => { :host => "localhost", :port => 8080, :threads => 4 }
@@ -27,7 +27,7 @@ RSpec.describe Hash do
         {} => {}, [] => {}, {} => [[]],
         'gluck' => { "host" => "localhost", port: 8080 },
         53 => :dhcpd
-      }.symbolize_keys
+      }.keys_to_symbols
     ).to eq ({
       :a => [ 1, '234a', :abcde, { :bcedr => :beceder, nono: "memem", :lala => { :lala => 123, :totototo => %r/^[^"]/, /^\w+/ => [ :a, :b, {} ] }, more: 0.1154 } ],
       {} => {}, [] => {}, {} => [[]],

@@ -19,16 +19,16 @@ class Hash
     end
   end
 
-  def symbolize_keys
+  def keys_to_symbols
     z = {}
     self.each do |k,v|
       z[ k.is_a?(String) ? k.to_sym : k ] =
           if v.class == Hash
-            v.symbolize_keys
+            v.keys_to_symbols
           elsif v.respond_to?(:to_hash)
-            v.to_hash.symbolize_keys
+            v.to_hash.keys_to_symbols
           elsif v.respond_to?(:collect)
-            v.collect{|i| i.respond_to?(:symbolize_keys) ? i.symbolize_keys : i }
+            v.collect{|i| i.respond_to?(:keys_to_symbols) ? i.keys_to_symbols : i }
           else
             v.dup
           end
