@@ -55,6 +55,9 @@ Also here's simple id generator based on current time `AMQProto#correlation_id`.
 
     camelcase()
 
+    percent_encode()
+Stupid encoding without any parsing as described in Twitter OAuth doc
+
 ## Array
 
     include?(*list)

@@ -1,0 +1,89 @@
+---
+app:
+  id: samurai_auth
+  # syslog, file, stderr, stdout, filename
+  log: stdout
+  tmout:
+    pg: 150
+    trial_days: 14
+    # in seconds
+    token_expiration:
+      login: 3600
+      password: 84600
+      email: 84600
+      name: 84600
+      facebook: 3600
+      google: 3600
+      twitter: 3600
+  callback_url: http://avgust.ho:8444
+  frontend_url: http://avgust.ho:3000
+  access_token_length: 26
+  password_length: 9
+  cors:
+    respond: http://optionsamurai.com
+    allowed:
+    - http://new.optionsamurai.com
+    - http://optionsamurai.com
+    - http://api.new.optionsamurai.com
+    - http://auth.new.optionsamurai.com
+
+oauth2:
+  facebook:
+    api_url: https://www.facebook.com/v7.0/dialog/oauth
+    callback_url: https://frontend.optionsamurai.com/v1/oauth/facebook
+    app_id: 3316846671680437
+    app_secret: fdc9b0daa4f69355f1c4b5885dab796c
+  google:
+    api_url: https://accounts.google.com/o/oauth2/v2/auth
+    client_id: 964608980615-ki21tltf5sv8kfg5cr4qiseq1uq6vtar.apps.googleusercontent.com
+    client_secret: 4cOVryyB9HK9MRwMM-as9ppG
+  twitter:
+    api_url: https://api.twitter.com/oauth2/token
+    callback_url: https://frontend.optionsamurai.com/v1/oauth/twitter
+    api_key: hLiHqVuOUxLarfUpe54ZgwULu
+    api_token: 1598866891-wWrcCe26VSM2pRUUl778xbqWtN7WWrFOxgZ4Ogx
+
+bcrypt:
+  cost: 11
+  secret: b0106c648b64d53306fd1b24be52d540cbd319b2df5b9d10914629b58a75a8c1742b08f2fe5db732d50a5517c05fe02f4601d24607dea5a1c176afc2b801a9dd
+  pepper:
+
+http:
+  host: 0.0.0.0
+  port: 3001
+
+mail:
+  from: robot@a.toh.info
+  via: :smtp
+  via_options:
+    host: pekarovsky.name
+    port: 993
+    user: robot@a.toh.info
+    password: kY1cUe7r/XhHfr0SY8vc
+    auth: plain
+
+db:
+  adapter: postgres
+  user: samurai
+  password: invalid-password
+  database: samurai_d
+  host: 127.0.0.1
+  port: 5432
+  search_path: public
+
+dbroot:
+  user: postgres
+  password: invalid password
+  database: postgres
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+
+contract:
+  PREMIUM_30DAYS: 3474458
+  PREMIUM_30DAYS_OLD: 3376742
+  PREMIUM_90DAYS: 3376740
+  PREMIUM_1YEAR: 3474462
+  PREMIUM_1YEAR_OLD: 3376746
