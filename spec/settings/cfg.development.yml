@@ -15,33 +15,33 @@ app:
       facebook: 3600
       google: 3600
       twitter: 3600
-  callback_url: http://avgust.ho:8444
-  frontend_url: http://avgust.ho:3000
+  callback_url: http://localhost:4000
+  frontend_url: http://localhost:3000
   access_token_length: 26
   password_length: 9
   cors:
-    respond: http://optionsamurai.com
+    respond: http://localhost
     allowed:
-    - http://new.optionsamurai.com
-    - http://optionsamurai.com
-    - http://api.new.optionsamurai.com
-    - http://auth.new.optionsamurai.com
+    - http://new.localhost
+    - http://localhost
+    - http://api.new.localhost
+    - http://auth.new.localhost
 
 oauth2:
   facebook:
     api_url: https://www.facebook.com/v7.0/dialog/oauth
-    callback_url: https://frontend.optionsamurai.com/v1/oauth/facebook
-    app_id: 3316846671680437
-    app_secret: fdc9b0daa4f69355f1c4b5885dab796c
+    callback_url: https://frontend.localhost.com/v1/oauth/facebook
+    app_id: 7191b81090440ca8e3747abbb484f70a
+    app_secret: ef8cb638faaee92fffa548a120f2959c
   google:
     api_url: https://accounts.google.com/o/oauth2/v2/auth
-    client_id: 964608980615-ki21tltf5sv8kfg5cr4qiseq1uq6vtar.apps.googleusercontent.com
-    client_secret: 4cOVryyB9HK9MRwMM-as9ppG
+    client_id: ktQCQRKifTAPuGBD6uMj.apps.googleusercontent.com
+    client_secret: ktQCQRKifTAPuGBD6uMj
   twitter:
     api_url: https://api.twitter.com/oauth2/token
-    callback_url: https://frontend.optionsamurai.com/v1/oauth/twitter
-    api_key: hLiHqVuOUxLarfUpe54ZgwULu
-    api_token: 1598866891-wWrcCe26VSM2pRUUl778xbqWtN7WWrFOxgZ4Ogx
+    callback_url: https://frontend.localhost.com/v1/oauth/twitter
+    api_key: ktQCQRKifTAPuGBD6uMj
+    api_token: 1598866891-ktQCQRKifTAPuGBD6uMj
 
 bcrypt:
   cost: 11
@@ -53,18 +53,18 @@ http:
   port: 3001
 
 mail:
-  from: robot@a.toh.info
+  from: robot@
   via: :smtp
   via_options:
-    host: pekarovsky.name
+    host: localhost
     port: 993
-    user: robot@a.toh.info
-    password: kY1cUe7r/XhHfr0SY8vc
+    user: robot@
+    password: ef8cb638faaee92fffa548a120f2959c
     auth: plain
 
 db:
   adapter: postgres
-  user: samurai
+  user: userany
   password: invalid-password
   database: samurai_d
   host: 127.0.0.1
@@ -73,7 +73,7 @@ db:
 
 dbroot:
   user: postgres
-  password: invalid password
+  password: ef8cb638faaee92fffa548a120f2959c
   database: postgres
 
 redis:
