@@ -48,6 +48,10 @@ Also here's simple id generator based on current time `AMQProto#correlation_id`.
     from_zlib
     # Zlib with rescue to {}
 
+    from_xml
+raises exception if XML header contain :schemaLocation, xs:schema, xmlns:xs
+uses nori for parsing
+
     to_a
     # => [self]
 

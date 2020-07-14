@@ -2,6 +2,7 @@ require 'yaml'
 require 'json'
 require 'msgpack'
 require 'zlib'
+require 'nori'
 require_relative 'hash'
 
 class String
@@ -24,9 +25,18 @@ class String
     safe_parse_hash( t )
   end
   def from_zlib
-    Zlib::Inflate.inflate data[ki]
+    Zlib::Inflate.inflate self
   end
-
+  def from_xml
+    # Защита от кулхацкеров
+    if self =~ /<!DOCTYPE[^>]+>|xsi:schemaLocation\s*=|<xs:schema|xmlns:xs=/
+      raise RuntimeError.new('Invalid XML data provided')
+    end
+    # На всякий случай удаляем заголовок, могут быть глюки у Nori
+    Nori.new(
+      :convert_tags_to => lambda { |tag| tag.snakecase.to_sym }
+      ).parse self.gsub(/^<\?xml[^>]+>\n*/i,'')
+  end
   def to_a
     [self]
   end

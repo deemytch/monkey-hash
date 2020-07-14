@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 gem 'msgpack'
 gem 'rspec'
+gem 'nokogiri'
+gem 'nori'

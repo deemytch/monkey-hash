@@ -31,4 +31,11 @@ RSpec.describe String do
     expect( 's'.present? ).to eq true
     expect( ''.present? ).to eq false
   end
+
+  it 'unpack from formats' do
+    expect( '{"status":true}'.from_json ).to eq( { status: true } )
+    expect( '<?xml version="1.0" encoding="UTF-8"?><status>true</status>'.from_xml ).to eq( { status: true } )
+    expect( '{"status":true}'.from_xml ).to eq({})
+    expect( '<?xml version="1.0" encoding="UTF-8"?><status>true</status>'.from_json ).to eq({})
+  end
 end
