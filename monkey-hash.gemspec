@@ -1,8 +1,8 @@
 Gem::Specification.new do |lib|
 
   lib.name          = 'monkey-hash'
-  lib.version       = '1.4.0'
-  lib.date          = '2020-07-14'
+  lib.version       = '1.4.1'
+  lib.date          = '2020-08-17'
   lib.summary       = 'Simple additions for standard classes.'
   lib.files         = Dir['lib/*.rb']
   lib.require_paths = %w[lib]
