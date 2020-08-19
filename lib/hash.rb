@@ -59,4 +59,20 @@ class Hash
     filter{ |k, v| kk.include?(k) }
   end
 
+  # do not processes recursive Arrays
+  def recursive_transform_values!(&block)
+    transform_values! do |v|
+
+      case v
+      when Hash
+        v.recursive_transform_values!( &block )
+      when Enumerable
+        v.map{|i| i.is_a?( Hash ) ? i.recursive_transform_values!( &block ) : yield( i ) }
+      else
+        yield( v )
+      end
+
+    end
+  end
+
 end

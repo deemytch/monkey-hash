@@ -21,6 +21,9 @@ This gem is supported thanks to pro.ruby community ( https://t.me/pro_rb ).
 
     filter_keys( *list )
 
+    recursive_transorm_values( &block )
+    # do not processes more than one level on arrays
+
 `hash.key.otherkey.more` notation, also `hash.key?` returns true/false, also `hash.key1.key2 = value` works, even if `key2` not exists.
 
 Also here's simple id generator based on current time `AMQProto#correlation_id`.
