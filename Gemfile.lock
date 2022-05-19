@@ -2,13 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
-    mini_portile2 (2.5.0)
+    mini_portile2 (2.8.0)
     msgpack (1.4.2)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.13.5)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     nori (2.6.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
